@@ -1,0 +1,29 @@
+/*
+ Global Settings: 
+ Settings defined in the global settings.json file (User Settings) are applied across all projects unless overridden by project-specific settings.
+*/
+
+/* 
+  Project-Specific: 
+  The .vscode/settings.json file is located inside the .vscode folder in your project. Settings defined here apply only to that project.
+*/
+{
+  "editor.tabSize": 2, // 2 spaces indentation
+  "editor.insertSpaces": true,
+  "javascript.format.semicolons": "insert",
+  "typescript.format.semicolons": "insert",
+  "prettier.semi": true,
+  "notebook.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "[typescriptreact]": {
+    // "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "prettier.jsxSingleQuote": true,
+  "javascript.format.insertSpaceAfterOpeningAndBeforeClosingJsxExpressionBraces": false,
+  "editor.formatOnSave": true,
+  "editor.detectIndentation": false,
+  "[scss]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "explorer.compactFolders": false
+}
