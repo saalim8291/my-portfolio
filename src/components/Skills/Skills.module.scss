@@ -1,0 +1,54 @@
+@use "../../styles/variables" as v;
+@use "../../styles/mixins" as m;
+
+.skills {
+  @include m.section-space;
+  border-top: 1px solid v.$color-border;
+
+  &__inner {
+    @include m.container;
+  }
+
+  &__title {
+    font-family: v.$font-heading;
+    font-weight: 700;
+    font-size: 1.75rem;
+    color: v.$color-text;
+    margin-bottom: v.$space-8;
+  }
+
+  &__grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: v.$space-4;
+
+    @include m.mobile {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  &__card {
+    @include m.card;
+    padding: v.$space-5;
+  }
+
+  &__cardTitle {
+    font-weight: 700;
+    font-size: 0.9375rem;
+    color: v.$color-text;
+    margin-bottom: v.$space-3;
+  }
+
+  &__list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: v.$space-2 v.$space-3;
+    list-style: none;
+  }
+
+  &__tag {
+    font-size: 0.8125rem;
+    color: v.$color-primary-text;
+    font-weight: 500;
+  }
+}
