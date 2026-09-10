@@ -1,0 +1,70 @@
+@use "../../styles/variables" as v;
+@use "../../styles/mixins" as m;
+
+.careerTimeline {
+  @include m.section-space;
+  border-top: 1px solid v.$color-border;
+
+  &__inner {
+    @include m.container;
+  }
+
+  &__title {
+    font-family: v.$font-heading;
+    font-weight: 700;
+    font-size: 1.75rem;
+    color: v.$color-text;
+    margin-bottom: v.$space-8;
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: v.$space-2;
+    max-width: 42rem;
+    list-style: none;
+  }
+
+  &__item {
+    &--exp2 {
+      transform: translateX(30px);
+
+      @include m.mobile {
+        transform: none;
+      }
+    }
+
+    &--exp3 {
+      transform: translateX(60px);
+
+      @include m.mobile {
+        transform: none;
+      }
+    }
+
+    @include m.card;
+    display: flex;
+    flex-direction: column;
+    gap: v.$space-1;
+    padding: v.$space-5 v.$space-6;
+    padding-left: calc(v.$space-6 + 4px);
+    border-left: 3px solid v.$color-primary;
+  }
+
+  &__period {
+    font-size: 0.8125rem;
+    color: v.$color-text-faint;
+  }
+
+  &__role {
+    font-weight: 700;
+    font-size: 0.9375rem;
+    color: v.$color-text;
+  }
+
+  &__description {
+    font-size: 0.8125rem;
+    color: v.$color-text-muted;
+    line-height: 1.6;
+  }
+}
