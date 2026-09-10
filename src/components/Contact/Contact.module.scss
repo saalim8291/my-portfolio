@@ -1,0 +1,192 @@
+@use "../../styles/variables" as v;
+@use "../../styles/mixins" as m;
+
+.contact {
+  @include m.section-space;
+  border-top: 1px solid v.$color-border;
+
+  &__inner {
+    @include m.container;
+    display: grid;
+    grid-template-columns: 1.6fr 1fr;
+    gap: v.$space-6;
+    align-items: start;
+
+    @include m.tablet {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  &__form {
+    @include m.card;
+    padding: v.$space-8;
+  }
+
+  &__title {
+    font-family: v.$font-heading;
+    font-weight: 700;
+    font-size: 1.5rem;
+    color: v.$color-text;
+    margin-bottom: v.$space-2;
+  }
+
+  &__subtitle {
+    color: v.$color-text-muted;
+    font-size: 0.9375rem;
+    margin-bottom: v.$space-6;
+  }
+
+  &__fields {
+    display: flex;
+    flex-direction: column;
+    gap: v.$space-4;
+  }
+
+  &__row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: v.$space-4;
+
+    @include m.mobile {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  &__input,
+  &__textarea {
+    width: 100%;
+    border: 1px solid v.$color-border;
+    border-radius: v.$radius-sm;
+    padding: 0.75rem v.$space-4;
+    font-size: 0.9375rem;
+    color: v.$color-text;
+    background: v.$color-bg;
+    resize: vertical;
+
+    &::placeholder {
+      color: v.$color-text-faint;
+    }
+
+    &:focus {
+      outline: 2px solid v.$color-primary;
+      outline-offset: 1px;
+      border-color: v.$color-primary;
+    }
+  }
+
+  &__footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: v.$space-4;
+    margin-top: v.$space-2;
+    flex-wrap: wrap;
+
+    @include m.mobile {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  }
+
+  &__direct {
+    font-size: 0.875rem;
+    color: v.$color-text-muted;
+  }
+
+  &__email {
+    font-weight: 700;
+    color: v.$color-text;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+
+  &__submit {
+    @include m.button-reset;
+    padding: 0.75rem 1.75rem;
+    border-radius: v.$radius-sm;
+    background: v.$color-primary;
+    color: #fff;
+    font-weight: 600;
+    font-size: 0.9375rem;
+
+    &:hover {
+      background: v.$color-primary-hover;
+    }
+  }
+
+  &__sidebar {
+    @include m.card;
+    padding: v.$space-8;
+    display: flex;
+    flex-direction: column;
+    gap: v.$space-6;
+  }
+
+  &__sidebarTitle {
+    font-family: v.$font-heading;
+    font-weight: 700;
+    font-size: 1.25rem;
+    color: v.$color-text;
+  }
+
+  &__sidebarText {
+    color: v.$color-text-muted;
+    font-size: 0.875rem;
+    line-height: 1.6;
+    margin-top: calc(-1 * v.$space-4);
+  }
+
+  &__rate {
+    display: flex;
+    flex-direction: column;
+    gap: v.$space-1;
+    padding-block: v.$space-4;
+    border-top: 1px solid v.$color-border;
+    border-bottom: 1px solid v.$color-border;
+  }
+
+  &__rateLabel {
+    font-size: 0.8125rem;
+    color: v.$color-text-faint;
+  }
+
+  &__rateValue {
+    font-family: v.$font-heading;
+    font-weight: 700;
+    font-size: 1.25rem;
+    color: v.$color-text;
+  }
+
+  &__factsTitle {
+    font-size: 0.9375rem;
+    font-weight: 700;
+    color: v.$color-text;
+    margin-bottom: v.$space-3;
+  }
+
+  &__factsList {
+    display: flex;
+    flex-direction: column;
+    gap: v.$space-2;
+    list-style: none;
+  }
+
+  &__factsItem {
+    position: relative;
+    padding-left: v.$space-4;
+    font-size: 0.875rem;
+    color: v.$color-text-muted;
+    line-height: 1.5;
+
+    &::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0.5em;
+      width: 5px;
+      height: 5px;
+      border-radius: v.$radius-full;
+      background: v.$color-primary;
+    }
+  }
+}
