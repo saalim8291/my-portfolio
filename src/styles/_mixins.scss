@@ -1,0 +1,54 @@
+@use "variables" as v;
+
+@mixin tablet {
+  @media (max-width: #{v.$bp-desktop - 1px}) {
+    @content;
+  }
+}
+
+@mixin mobile {
+  @media (max-width: #{v.$bp-tablet - 1px}) {
+    @content;
+  }
+}
+
+@mixin container {
+  width: 100%;
+  max-width: v.$container-max;
+  margin-inline: auto;
+  padding-inline: v.$container-padding;
+
+  @include mobile {
+    padding-inline: v.$container-padding-mobile;
+  }
+}
+
+@mixin section-space {
+  padding-block: v.$space-8 v.$space-16;
+
+  @include mobile {
+    padding-block: v.$space-6 v.$space-10;
+  }
+}
+
+@mixin card {
+  background: v.$color-bg;
+  border: 1px solid v.$color-border;
+  border-radius: v.$radius-md;
+}
+
+@mixin pill {
+  display: inline-flex;
+  align-items: center;
+  border-radius: v.$radius-full;
+  font-size: 0.8125rem;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+@mixin button-reset {
+  border: none;
+  background: none;
+  font: inherit;
+  cursor: pointer;
+}
