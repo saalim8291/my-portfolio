@@ -1,0 +1,165 @@
+@use "../../styles/variables" as v;
+@use "../../styles/mixins" as m;
+
+.projects {
+  @include m.section-space;
+  border-top: 1px solid v.$color-border;
+
+  &__inner {
+    @include m.container;
+  }
+
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: v.$space-6;
+    margin-bottom: v.$space-10;
+
+    @include m.mobile {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: v.$space-2;
+    }
+  }
+
+  &__title {
+    font-family: v.$font-heading;
+    font-weight: 700;
+    font-size: 1.75rem;
+    color: v.$color-text;
+  }
+
+  &__subtitle {
+    color: v.$color-text-muted;
+    font-size: 0.9375rem;
+    max-width: 32ch;
+    text-align: right;
+
+    @include m.mobile {
+      text-align: left;
+    }
+  }
+
+  &__grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: v.$space-6;
+
+    @include m.tablet {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @include m.mobile {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  &__card {
+    @include m.card;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+  }
+
+  &__thumbnail {
+    position: relative;
+    aspect-ratio: 16 / 10;
+    background: linear-gradient(160deg, #1f2937, #0f172a);
+    overflow: hidden;
+  }
+
+  &__thumbnailImage {
+    object-fit: cover;
+  }
+
+  &__cardBody {
+    display: flex;
+    flex-direction: column;
+    gap: v.$space-3;
+    padding: v.$space-6;
+    flex: 1;
+  }
+
+  &__cardHead {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: v.$space-3;
+  }
+
+  &__cardTitle {
+    font-family: v.$font-heading;
+    font-weight: 700;
+    font-size: 1.0625rem;
+    color: v.$color-text;
+  }
+
+  &__cardDescription {
+    color: v.$color-text-muted;
+    font-size: 0.875rem;
+    line-height: 1.6;
+    flex: 1;
+  }
+
+  &__cardTags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: v.$space-2;
+    list-style: none;
+  }
+
+  &__cardTag {
+    @include m.pill;
+    padding: 0.2rem 0;
+    color: v.$color-primary-text;
+    font-size: 0.75rem;
+    font-weight: 500;
+  }
+
+  &__cardFooter {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: v.$space-3;
+    margin-top: v.$space-2;
+    flex-wrap: wrap;
+  }
+
+  &__cardRole {
+    font-size: 0.8125rem;
+    color: v.$color-text-muted;
+  }
+
+  &__cardActions {
+    display: flex;
+    gap: v.$space-2;
+    margin-left: auto;
+  }
+
+  &__cardAction {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.45rem 1rem;
+    border-radius: v.$radius-sm;
+    font-size: 0.8125rem;
+    font-weight: 600;
+    background: v.$color-primary;
+    color: #fff;
+    border: 1px solid v.$color-primary;
+
+    &:hover {
+      background: v.$color-primary-hover;
+    }
+
+    &--outline {
+      background: transparent;
+      color: v.$color-text;
+      border-color: v.$color-border;
+
+      &:hover {
+        background: v.$color-surface;
+      }
+    }
+  }
+}
