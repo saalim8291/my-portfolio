@@ -1,0 +1,107 @@
+@use "../../styles/variables" as v;
+@use "../../styles/mixins" as m;
+
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: v.$color-bg;
+  border-bottom: 1px solid v.$color-border;
+
+  &__inner {
+    @include m.container;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: v.$space-6;
+    padding-block: v.$space-4;
+  }
+
+  &__logo {
+    display: inline-flex;
+    align-items: center;
+    gap: v.$space-2;
+    font-family: v.$font-heading;
+    font-weight: 700;
+    font-size: 1.125rem;
+    color: v.$color-text;
+  }
+
+  &__logoIcon {
+    color: v.$color-primary;
+  }
+
+  &__nav {
+    @include m.tablet {
+      display: none;
+    }
+  }
+
+  &__navList {
+    display: flex;
+    align-items: center;
+    gap: v.$space-8;
+    list-style: none;
+  }
+
+  &__navItem {
+    display: block;
+  }
+
+  &__navLink {
+    font-size: 0.9375rem;
+    color: v.$color-text-secondary;
+    transition: color 0.15s ease;
+
+    &:hover {
+      color: v.$color-text;
+    }
+  }
+
+  &__actions {
+    display: flex;
+    align-items: center;
+    gap: v.$space-3;
+
+    @include m.mobile {
+      gap: v.$space-2;
+    }
+  }
+
+  &__button {
+    @include m.pill;
+    padding: 0.55rem 1.15rem;
+    border-radius: v.$radius-sm;
+    font-weight: 600;
+    background: v.$color-primary;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    border: 1px solid v.$color-primary;
+    transition:
+      background 0.15s ease,
+      border-color 0.15s ease;
+
+    &:hover {
+      background: v.$color-primary-hover;
+      border-color: v.$color-primary-hover;
+    }
+
+    &--outline {
+      background: transparent;
+      color: v.$color-text;
+      border-color: v.$color-border;
+
+      &:hover {
+        background: v.$color-surface;
+        border-color: v.$color-border;
+      }
+    }
+
+    @include m.mobile {
+      padding: 0.5rem 0.9rem;
+      font-size: 0.8125rem;
+    }
+  }
+}
