@@ -1,0 +1,108 @@
+@use "../../styles/variables" as v;
+@use "../../styles/mixins" as m;
+
+.footer {
+  border-top: 1px solid v.$color-border;
+  padding: v.$space-12 0 v.$space-22;
+  margin-top: auto;
+
+  &__inner {
+    @include m.container;
+    display: grid;
+    grid-template-columns: 1.6fr 1fr 1fr;
+    gap: v.$space-10;
+
+    @include m.tablet {
+      grid-template-columns: 1fr 1fr;
+    }
+
+    @include m.mobile {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  &__brand {
+    display: flex;
+    flex-direction: column;
+    gap: v.$space-2;
+  }
+
+  &__logo {
+    display: inline-flex;
+    align-items: center;
+    gap: v.$space-2;
+    font-family: v.$font-heading;
+    font-weight: 700;
+    font-size: 1.0625rem;
+    color: v.$color-text;
+    margin-bottom: v.$space-2;
+  }
+
+  &__logoIcon {
+    color: v.$color-primary;
+  }
+
+  &__location,
+  &__contactLine {
+    font-size: 0.875rem;
+    color: v.$color-text-muted;
+  }
+
+  &__column {
+    display: flex;
+    flex-direction: column;
+    gap: v.$space-4;
+  }
+
+  &__heading {
+    font-size: 0.9375rem;
+    font-weight: 700;
+    color: v.$color-text;
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: v.$space-3;
+    list-style: none;
+  }
+
+  &__link {
+    font-size: 0.875rem;
+    color: v.$color-text-muted;
+
+    &:hover {
+      color: v.$color-primary;
+    }
+  }
+
+  &__socials {
+    display: flex;
+    gap: v.$space-3;
+  }
+
+  &__socialLink {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 34px;
+    height: 34px;
+    border-radius: v.$radius-full;
+    border: 1px solid v.$color-border;
+    color: v.$color-text-muted;
+
+    &:hover {
+      color: v.$color-primary;
+      border-color: v.$color-primary;
+    }
+  }
+
+  &__socialIcon {
+    flex-shrink: 0;
+  }
+
+  &__copyright {
+    font-size: 0.8125rem;
+    color: v.$color-text-faint;
+  }
+}
