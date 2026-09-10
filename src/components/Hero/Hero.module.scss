@@ -1,0 +1,182 @@
+@use "../../styles/variables" as v;
+@use "../../styles/mixins" as m;
+
+.hero {
+  padding-block: v.$space-16 v.$space-12;
+
+  @include m.mobile {
+    padding-block: v.$space-10 v.$space-8;
+  }
+
+  &__inner {
+    @include m.container;
+    display: grid;
+    grid-template-columns: 1fr 0.85fr;
+    gap: v.$space-16;
+    align-items: center;
+
+    @include m.tablet {
+      grid-template-columns: 1fr;
+      gap: v.$space-10;
+    }
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    gap: v.$space-5;
+  }
+
+  &__tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: v.$space-4;
+    list-style: none;
+  }
+
+  &__tag {
+    @include m.pill;
+    padding: 0.3rem 0;
+    color: v.$color-primary-text;
+    font-weight: 500;
+  }
+
+  &__title {
+    font-family: v.$font-heading;
+    font-weight: 700;
+    font-size: clamp(2rem, 3.4vw + 1rem, 3rem);
+    line-height: 1.15;
+    color: v.$color-text;
+    max-width: 22ch;
+  }
+
+  &__description {
+    color: v.$color-text-secondary;
+    font-size: 1rem;
+    line-height: 1.65;
+    max-width: 52ch;
+  }
+
+  &__cta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: v.$space-3;
+    margin-top: v.$space-2;
+  }
+
+  &__button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.75rem 1.5rem;
+    border-radius: v.$radius-sm;
+    font-weight: 600;
+    font-size: 0.9375rem;
+    background: v.$color-primary;
+    color: #fff;
+    border: 1px solid v.$color-primary;
+    transition:
+      background 0.15s ease,
+      border-color 0.15s ease;
+
+    &:hover {
+      background: v.$color-primary-hover;
+      border-color: v.$color-primary-hover;
+    }
+
+    &--outline {
+      background: transparent;
+      color: v.$color-text;
+      border-color: v.$color-border;
+
+      &:hover {
+        background: v.$color-surface;
+      }
+    }
+  }
+
+  &__socials {
+    display: flex;
+    flex-wrap: wrap;
+    gap: v.$space-6;
+    margin-top: v.$space-3;
+  }
+
+  &__socialLink {
+    display: inline-flex;
+    align-items: center;
+    gap: v.$space-2;
+    font-size: 0.875rem;
+    color: v.$color-text-secondary;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    text-decoration-color: v.$color-border;
+
+    &:hover {
+      color: v.$color-primary;
+    }
+  }
+
+  &__socialIcon {
+    color: v.$color-text-faint;
+    flex-shrink: 0;
+  }
+
+  &__media {
+    display: flex;
+    justify-content: center;
+  }
+
+  &__portrait {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 4 / 3.1;
+    border-radius: v.$radius-lg;
+    overflow: hidden;
+    background: linear-gradient(155deg, #1f2937 0%, #111827 55%, #0b1220 100%);
+    box-shadow: v.$shadow-md;
+  }
+
+  &__portraitDesk {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    gap: v.$space-3;
+    padding: 18% 12% 14%;
+  }
+
+  &__portraitScreen {
+    flex: 1;
+    height: 55%;
+    border-radius: 6px;
+    background: linear-gradient(160deg, #4f46e5 0%, #312e81 100%);
+    opacity: 0.85;
+
+    &:first-child {
+      height: 45%;
+      align-self: flex-start;
+    }
+  }
+
+  &__portraitKeyboard {
+    position: absolute;
+    left: 12%;
+    right: 12%;
+    bottom: 10%;
+    height: 8%;
+    border-radius: 4px;
+    background: rgba(255, 255, 255, 0.08);
+  }
+
+  &__portraitGlow {
+    position: absolute;
+    top: -20%;
+    right: -10%;
+    width: 60%;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(129, 140, 248, 0.35), transparent 70%);
+  }
+}
