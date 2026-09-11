@@ -68,6 +68,10 @@
     }
   }
 
+  &__downloadIcon {
+    margin-left: 10px;
+  }
+
   &__button {
     @include m.pill;
     padding: 0.55rem 1.15rem;

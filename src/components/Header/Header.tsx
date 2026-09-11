@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useRef } from "react";
-import { CodeIcon, ResumeIcon } from "@/components/icons/Icons";
+import { CodeIcon, DownloadIcon, ResumeIcon } from "@/components/icons/Icons";
 import styles from "./Header.module.scss";
 
 const NAV_LINKS = [
@@ -56,8 +56,9 @@ export default function Header() {
             Hire Me
           </a>
           <a href="./Saalim-Bhatkar-Resume.pdf" className={`${styles.header__button} ${styles["header__button--outline"]}`} download>
-            Resume
             <ResumeIcon />
+            <div>Resume</div>
+            <DownloadIcon className={styles.header__downloadIcon} />
           </a>
         </div>
       </div>
