@@ -54,7 +54,7 @@ export default function Hero() {
               <GithubIcon className={styles.hero__socialIcon} />
               GitHub
             </a>
-            <a href="https://www.freelancer.in/u/saalim8291" className={styles.hero__socialLink} target="_blank" rel="noreferrer">
+            <a href="https://leetcode.com/u/saalim_bhatkar/" className={styles.hero__socialLink} target="_blank" rel="noreferrer">
               <LeetCodeIcon className={styles.hero__socialIcon} />
               LeetCode
             </a>
